@@ -3,7 +3,7 @@
     "parserOptions": {
       "ecmaVersion": 6,
       "ecmaFeatures": {
-        "impliedStrict": true
+        "impliedStrict": false
       }
     },
     "env": {
@@ -15,7 +15,7 @@
       "no-console": "off",
       "no-undefined": "off",
       "indent": ["error", 2],
-      "quotes": ["warn", "single"],
+      "quotes": ["warn", "double"],
       "no-multi-spaces": [
         "warn",
         {
