@@ -1,12 +1,20 @@
 "use strict";
 
-var score=5;
-var greet=confirm("Hello! would you like to take a quiz?");
+var score=6;
+/*var greet=confirm("Hello! would you like to take a quiz?");
 if(greet===false){
   alert("Too bad.");
 }
-var user=prompt("What's your name?").trim();
-alert("Hi "+user+"! I'm Ethan. I'm gonna ask you questions about myself. See how many you can get right");
+var user=prompt("What's your name?");
+while(user===null){
+  alert("you're still trying to cancel out of this?");
+  user=prompt("What's your name?");
+}
+if (user===""){
+  alert("i'm just going to call you Bob");
+  user=("Bob");
+}
+alert("Hi "+user.trim()+"! I'm Ethan. I'm gonna ask you questions about myself. See how many you can get right");
 var eye=prompt("#1. Are my eyes blue?").toLowerCase().trim();
 console.log("Are my eyes blue?");
 console.log("user answered:"+eye);
@@ -93,4 +101,73 @@ else{
   score=score-1;
   console.log("User's imput was not understood.");
 }
-alert("Thanks for playing! You got "+score+"/5 questions right!");
+*/
+var favNum=Math.ceil(Math.random()*10).toString();
+console.log(favNum);
+var guess=prompt("What is my favorite number?");
+if (guess===""){
+  alert("I'm assuming that's a zero...");
+}
+var lastGuess;
+var lastDistance;
+var currentDistance;
+var stat;
+console.log(guess);
+while (guess!==favNum){
+
+  if (guess===null){
+    break;
+  }
+  if (!isNaN(lastGuess)){
+    lastDistance=lastGuess-favNum;
+    //console.log("current:"+lastDistance);
+    currentDistance=guess-favNum;
+    //console.log("this should not be running");
+    //console.log("current:"+currentDistance);
+    if (lastDistance<0){
+      lastDistance=lastDistance*(-1);
+    }
+    if (currentDistance<0){
+      currentDistance=currentDistance*(-1);
+    }
+    if (lastDistance>currentDistance){
+      stat="Warmer";
+    // console.log("last vs current:"+lastDistance+">"+currentDistance);
+    }
+    else if (lastDistance<currentDistance){
+      stat="Colder";
+    // console.log("last vs current:"+lastDistance+"<"+currentDistance);
+    }
+    else if(lastDistance===currentDistance){
+      stat="No change";
+      //console.log("last vs current:"+lastDistance+"="+currentDistance);
+      //console.log("this should not be running");
+    }
+    else{
+      stat=undefined;
+    }
+  }
+  lastGuess=guess;
+  if(stat===undefined){
+    guess=prompt("Try again: What is my favorite number?");
+    if (guess===""){
+      alert("I'm assuming that's a zero...");
+    }
+  }
+  else{
+    guess=prompt(stat+" Try again: What is my favorite number?");
+    if (guess===""){
+      alert("I'm assuming that's a zero...");
+    }
+  }
+  console.log(guess);
+}
+if(guess===null){
+  alert("Give up already? The number was "+favNum);
+  score=score-1;
+}
+else{
+  alert("You're right!");
+}
+
+alert("Thanks for playing! You got "+score+"/6 questions right!");
