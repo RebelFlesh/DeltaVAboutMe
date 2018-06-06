@@ -1,0 +1,35 @@
+header{
+    border-width:5px;
+    border-color:black;
+    border-style:hidden hidden solid hidden;
+   background-color:red;
+   padding-top:50px;
+}
+.mainTitle{
+    text-align :center;
+    color: white;
+}
+section h3{
+    border: 3px solid black;
+    color:white;
+    background-color:red;
+    padding-left:30px;
+}
+.physical{
+    margin-right:1000px;
+}
+.family{
+    margin-right:1000px;
+}
+ol, ul{
+    list-style-type:square; 
+}
+
+body{
+    margin-left:0px ;
+    margin-right:0px;
+}
+section{
+    margin-left:8px;
+    margin-right:8px;
+}
