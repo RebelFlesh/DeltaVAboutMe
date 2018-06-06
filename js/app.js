@@ -1,8 +1,8 @@
 "use strict";
 
 var score=5;
-confirm("Hello! would you like to take a quiz?");
-if(confirm===false){
+var greet=confirm("Hello! would you like to take a quiz?");
+if(greet===false){
   alert("Too bad.");
 }
 var user=prompt("What's your name?").trim();
