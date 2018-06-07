@@ -108,7 +108,7 @@ var lastGuess;
 var lastDistance;
 var currentDistance;
 var stat;
-var guessCount=5;
+var guessCount=6;
 while (guess!==favNum){
   if (guess===""){
     alert("I'm assuming that's a zero...");
@@ -166,6 +166,24 @@ else if(guessCount===0){
 }
 else{
   alert("You're right! The number was "+favNum+"!");
+}
+
+var bro=["kera","emily","matt","josh","chris"];
+var guessBroCount=6;
+var guessBro=prompt("Can you guess the name of one of my siblings?").toLowerCase();
+while(guessBroCount>0){
+  if (bro.indexOf(guessBro)>=0){
+    alert("Good guess! I have 5 siblings,"+bro.join(", "));
+    break;
+  }
+  else{
+    alert("Nope, sorry.");
+    guessBroCount=-1;
+  }
+}
+if (guessBroCount===0){
+  alert("Oh no! You ran out of guesses. My siblings' names are:"+bro.join(", "));
+  score=score-1;
 }
 
 alert("Thanks for playing! You got "+score+"/6 questions right!");
