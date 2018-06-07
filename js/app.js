@@ -1,7 +1,7 @@
 "use strict";
 
 var score=6;
-/*var greet=confirm("Hello! would you like to take a quiz?");
+var greet=confirm("Hello! would you like to take a quiz?");
 if(greet===false){
   alert("Too bad.");
 }
@@ -101,21 +101,19 @@ else{
   score=score-1;
   console.log("User's imput was not understood.");
 }
-*/
-var favNum=Math.ceil(Math.random()*10).toString();
+var favNum=Math.floor(Math.random()*10).toString();
 console.log(favNum);
-var guess=prompt("What is my favorite number?");
-if (guess===""){
-  alert("I'm assuming that's a zero...");
-}
+var guess=prompt("Guess my favorite number between 0-9?");
 var lastGuess;
 var lastDistance;
 var currentDistance;
 var stat;
-console.log(guess);
+var guessCount=5;
 while (guess!==favNum){
-
-  if (guess===null){
+  if (guess===""){
+    alert("I'm assuming that's a zero...");
+  }
+  if (guessCount===0||guess===null){
     break;
   }
   if (!isNaN(lastGuess)){
@@ -149,25 +147,25 @@ while (guess!==favNum){
   }
   lastGuess=guess;
   if(stat===undefined){
-    guess=prompt("Try again: What is my favorite number?");
-    if (guess===""){
-      alert("I'm assuming that's a zero...");
-    }
+    guess=prompt("Try again? You still have "+guessCount+" guesses left");
   }
   else{
-    guess=prompt(stat+" Try again: What is my favorite number?");
-    if (guess===""){
-      alert("I'm assuming that's a zero...");
-    }
+    guess=prompt(stat+"! You wanna try again? You still have "+guessCount+" guesses left");
   }
   console.log(guess);
+  guessCount=guessCount-1;
+  console.log(guessCount);
 }
 if(guess===null){
   alert("Give up already? The number was "+favNum);
   score=score-1;
 }
+else if(guessCount===0){
+  alert("Sorry, you ran out of guesses.");
+  score=score-1;
+}
 else{
-  alert("You're right!");
+  alert("You're right! The number was "+favNum+"!");
 }
 
 alert("Thanks for playing! You got "+score+"/6 questions right!");
