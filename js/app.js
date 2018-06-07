@@ -1,6 +1,6 @@
 "use strict";
 
-var score=6;
+var score=7;
 var greet=confirm("Hello! would you like to take a quiz?");
 if(greet===false){
   alert("Too bad.");
@@ -171,19 +171,23 @@ else{
 var bro=["kera","emily","matt","josh","chris"];
 var guessBroCount=7;
 var guessBro=prompt("Can you guess the name of one of my siblings?").toLowerCase();
-while(guessBroCount>0){
-  if (bro.indexOf(guessBro)>=0){
-    alert("Good guess! I have 5 siblings,"+bro.join(", "));
+console.log(bro);
+console.log(guessBro);
+console.log(guessBroCount);
+console.log(bro.indexOf(guessBro));
+while(bro.indexOf(guessBro)<=0){
+  alert("Nope, sorry.");
+  guessBroCount-=1;
+  if(guessBroCount===0){
     break;
   }
-  else{
-    alert("Nope, sorry.");
-    guessBroCount=-1;
-  }
+  guessBro=prompt("Wanna try agian? You have "+guessBroCount+" tries left.");
 }
 if (guessBroCount===0){
-  alert("Oh no! You ran out of guesses. My siblings' names are:"+bro.join(", "));
+  alert("Oh no! You ran out of guesses. My siblings' names are: "+bro.join(", "));
   score=score-1;
 }
-
-alert("Thanks for playing! "+user+" You got "+score+"/6 questions right!");
+else{
+  alert("Good guess! I have 5 siblings, "+bro.join(", "));
+}
+alert("Thanks for playing! "+user+" You got "+score+"/7 questions right!");
