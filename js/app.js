@@ -1,14 +1,15 @@
 "use strict";
 
 var masterBracket=[
-  /*0*/["#1. Are my eyes blue?","#2. In my lifetime, did my family has only owned 1 pet?","#3. Am I currently working as a waiter when not in class?"],
-  /*1*/["yes","no","yes"],
-  /*2*/["y","n","y"],
-  /*3*/["correct response 1","correct response 2","correct response 3"],
-  /*4*/["inccorect response 1","inccorect response 2","inccorect response 3"]
+  /*0*/["#1. Are my eyes blue?","#2. In my lifetime, did my family has only owned 1 pet?","#3. Am I currently working as a waiter when not in class?","#4. Is my favorite video game is The Last of Us by Naughty Dog?"
+    ,"#5. Have I never been out of the United States?"],
+  /*1*/["yes","no","yes", "yes", "no"],
+  /*2*/["y","n","y", "y", "n"],
+  /*3*/["correct response 1","correct response 2","correct response 3", "correct response 4", "correct response 5"],
+  /*4*/["inccorect response 1","inccorect response 2","inccorect response 3", "inccorect response 4", "inccorect response 5"]
 ];
 
-function quiz(question,answerWord,answerLetter){
+function quiz(){
   //Gretting/startup
   var greet=confirm("Hello! would you like to take a quiz?");
   if(greet===false){
@@ -26,18 +27,18 @@ function quiz(question,answerWord,answerLetter){
   alert("Hi "+user.trim()+"! I'm Ethan. I'm gonna ask you questions about myself. See how many you can get right");
   var score=0;
   //Content Questions
-  for(var questionNum=1;questionNum<5;questionNum++){
-    var eye=prompt(masterBracket[0[0]]).toLowerCase().trim();
-    if(eye===masterBracket[1[0]]||eye===masterBracket[2[0]]){
-      alert(masterBracket[3[0]]);
+  for(var questionNum=0;questionNum<5;questionNum++){
+    var eye=prompt(masterBracket[0][questionNum]).toLowerCase().trim();
+    if(eye===masterBracket[1][questionNum]||eye===masterBracket[2][questionNum]){
+      alert(masterBracket[3][questionNum]);
       score++;
     }
     else{
-      alert(masterBracket[4[0]]);
+      alert(masterBracket[4][questionNum]);
     }
-    masterBracket
   }
 }
+quiz();
 /*var score=7;
 
 var eye=prompt("#1. Are my eyes blue?").toLowerCase().trim();
