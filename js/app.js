@@ -1,20 +1,45 @@
 "use strict";
 
-var score=7;
-var greet=confirm("Hello! would you like to take a quiz?");
-if(greet===false){
-  alert("Too bad.");
+var masterBracket=[
+  /*0*/["#1. Are my eyes blue?","#2. In my lifetime, did my family has only owned 1 pet?","#3. Am I currently working as a waiter when not in class?"],
+  /*1*/["yes","no","yes"],
+  /*2*/["y","n","y"],
+  /*3*/["correct response 1","correct response 2","correct response 3"],
+  /*4*/["inccorect response 1","inccorect response 2","inccorect response 3"]
+];
+
+function quiz(question,answerWord,answerLetter){
+  //Gretting/startup
+  var greet=confirm("Hello! would you like to take a quiz?");
+  if(greet===false){
+    alert("Too bad.");
+  }
+  var user=prompt("What's your name?");
+  while(user===null){
+    alert("you're still trying to cancel out of this?");
+    user=prompt("What's your name?");
+  }
+  if (user===""){
+    alert("i'm just going to call you Bob");
+    user=("Bob");
+  }
+  alert("Hi "+user.trim()+"! I'm Ethan. I'm gonna ask you questions about myself. See how many you can get right");
+  var score=0;
+  //Content Questions
+  for(var questionNum=1;questionNum<5;questionNum++){
+    var eye=prompt(masterBracket[0[0]]).toLowerCase().trim();
+    if(eye===masterBracket[1[0]]||eye===masterBracket[2[0]]){
+      alert(masterBracket[3[0]]);
+      score++;
+    }
+    else{
+      alert(masterBracket[4[0]]);
+    }
+    masterBracket
+  }
 }
-var user=prompt("What's your name?");
-while(user===null){
-  alert("you're still trying to cancel out of this?");
-  user=prompt("What's your name?");
-}
-if (user===""){
-  alert("i'm just going to call you Bob");
-  user=("Bob");
-}
-alert("Hi "+user.trim()+"! I'm Ethan. I'm gonna ask you questions about myself. See how many you can get right");
+/*var score=7;
+
 var eye=prompt("#1. Are my eyes blue?").toLowerCase().trim();
 console.log("Are my eyes blue?");
 console.log("user answered:"+eye);
@@ -101,6 +126,7 @@ else{
   score=score-1;
   console.log("User's imput was not understood.");
 }
+*/
 var favNum=Math.floor(Math.random()*10).toString();
 console.log(favNum);
 var guess=prompt("Guess my favorite number between 0-9?");
