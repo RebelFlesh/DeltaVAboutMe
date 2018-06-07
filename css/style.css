@@ -18,14 +18,10 @@ section h3{
     background-color:red;
     padding-left:30px;
 }
-.physical{
-    margin-right:1000px;
-}
-.family{
-    margin-right:1000px;
-}
+
  ul{
-    list-style-type:square; 
+    list-style-type:square;
+    padding-left: 100px;
 }
 ol{
     padding-left:0;
@@ -44,4 +40,23 @@ body{
 section{
     margin-left:8px;
     margin-right:8px;
+}
+
+.physical{
+    width: 45%;
+    float: left;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.family{
+    width: 45%;
+    float: left;
+}
+
+.occupation{
+    width: 100%;
+    position: static;
+    display: block;
+    clear:both;
 }
