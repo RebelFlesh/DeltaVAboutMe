@@ -169,7 +169,7 @@ else{
 }
 
 var bro=["kera","emily","matt","josh","chris"];
-var guessBroCount=6;
+var guessBroCount=7;
 var guessBro=prompt("Can you guess the name of one of my siblings?").toLowerCase();
 while(guessBroCount>0){
   if (bro.indexOf(guessBro)>=0){
@@ -186,4 +186,4 @@ if (guessBroCount===0){
   score=score-1;
 }
 
-alert("Thanks for playing! You got "+score+"/6 questions right!");
+alert("Thanks for playing! "+user+" You got "+score+"/6 questions right!");
