@@ -1,3 +1,7 @@
+body{
+    margin-left:0px ;
+    margin-right:0px;
+}
 header{
     border-width:5px;
     border-color:black;
@@ -8,8 +12,6 @@ header{
 .mainTitle{
     text-align :center;
     color: white;
-}
-h1{
     font-size:4em;
 }
 section h3{
@@ -18,7 +20,6 @@ section h3{
     background-color:red;
     padding-left:30px;
 }
-
  ul{
     list-style-type:square;
     padding-left: 100px;
@@ -32,29 +33,31 @@ ol li{
     float:left;
     margin-left:45px;
 }
-
-body{
-    margin-left:0px ;
-    margin-right:0px;
-}
 section{
     margin-left:8px;
     margin-right:8px;
 }
-
-.physical{
-    width: 45%;
-    float: left;
+.profile{
+    margin:10px;
+    margin-top:20px;
     display: inline-block;
-    margin-left: 50px;
+    float:left;
+    width:30%;
+    
 }
+.physical{
+    width: 30%;
+    float:left;
+    display:inline-block;
 
+}
 .family{
-    width: 45%;
-    float: left;
+    width: 30%;
+    display:inline-block;
 }
-
+}
 .occupation{
+    margin-top:10px;
     width: 100%;
     position: static;
     display: block;

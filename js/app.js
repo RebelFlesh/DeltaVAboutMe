@@ -119,7 +119,7 @@ function quiz(){
   }
   //Index guessing game
   var bro=["kera","emily","matt","josh","chris"];
-  var guessBroCount=7;
+  var guessBroCount=0;
   var guessBro=prompt("Can you guess the name of one of my siblings?").toLowerCase();
   console.log(bro);
   console.log(guessBro);
@@ -127,13 +127,13 @@ function quiz(){
   console.log(bro.indexOf(guessBro));
   while(bro.indexOf(guessBro)<0){
     alert("Nope, sorry.");
-    guessBroCount-=1;
-    if(guessBroCount===0){
+    guessBroCount+=1;
+    if(guessBroCount===5){
       break;
     }
     guessBro=prompt("Wanna try agian? You have "+guessBroCount+" tries left.");
   }
-  if (guessBroCount===0){
+  if (guessBroCount===5){
     alert("Oh no! You ran out of guesses. My siblings' names are: "+bro.join(", "));
   }
   else{
@@ -142,7 +142,7 @@ function quiz(){
   }
   alert("Thanks for playing! "+user+" You got "+score+"/7 questions right!");
 }
-quiz();
+//quiz();
 
 
 
