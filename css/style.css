@@ -1,6 +1,5 @@
 body{
-    margin-left:0px ;
-    margin-right:0px;
+    margin:0px;
 }
 header{
     border-width:5px;
@@ -24,6 +23,9 @@ section h3{
     list-style-type:square;
     padding-left: 100px;
 }
+ul ul {
+    padding-left:25px;
+}
 ol{
     padding-left:0;
     clear:both;
@@ -43,6 +45,7 @@ section{
     display: inline-block;
     float:left;
     width:30%;
+    margin-left:60px;
     
 }
 .physical{
@@ -55,11 +58,20 @@ section{
     width: 30%;
     display:inline-block;
 }
-}
 .occupation{
     margin-top:10px;
     width: 100%;
     position: static;
     display: block;
     clear:both;
+}
+footer{
+    background-color:#D3D3D3;
+    padding-top:10px;
+    content:center;
+}
+.quizButton{
+    position: relative;
+    bottom:5px;
+    left:600px;
 }
